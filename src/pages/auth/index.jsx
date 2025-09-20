@@ -3,10 +3,14 @@ import Background from "@/assets/login2.png";
 import Victory from "@/assets/victory.svg";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleLogin = async () => {};
+  const handleSignup = async () => {};
 
   return (
     <div className="h-[100vh] w-[100vw] flex items-center justify-center">
@@ -50,8 +54,36 @@ function Auth() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <Button className="rounded-full p-6" onClick={handleLogin}>
+                  Login
+                </Button>
               </TabsContent>
-              <TabsContent className="" value="signup"></TabsContent>
+              <TabsContent className="flex flex-col gap-5" value="signup">
+                <Input
+                  placeholder="Email"
+                  type="email"
+                  className="rounded-full p-6"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Input
+                  placeholder="Password"
+                  type="password"
+                  className="rounded-full p-6"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <Input
+                  placeholder="Confirm Password"
+                  type="password"
+                  className="rounded-full p-6"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+                <Button className="rounded-full p-6" onClick={handleSignup}>
+                  Sign Up
+                </Button>
+              </TabsContent>
             </Tabs>
           </div>
         </div>
